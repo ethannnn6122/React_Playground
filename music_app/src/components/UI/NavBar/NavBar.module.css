@@ -1,0 +1,30 @@
+.NavBar {
+    width: 100%;
+}
+
+.NavBar > header > nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #3F6F8C;
+}
+
+.NavBar li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.NavBar a {
+    text-decoration: none;
+    color:  white;
+}
+
+.NavBar a:hover,
+.NavBar a.active{
+    color: #AADADA;
+    text-decoration: none;
+}
+
+
