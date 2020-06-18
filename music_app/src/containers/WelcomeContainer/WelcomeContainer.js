@@ -10,7 +10,7 @@ class WelcomeContainer extends Component {
             <>
                 <Container fluid>
                         <br />
-                    <Jumbotron style={{ backgroundColor: "#3F6F8C" }}>
+                    <Jumbotron style={{ backgroundColor: "#3F6F8C", borderRadius: '2em' }}>
                             <Container>
                                 <h1>Welcome to DiscoverTunes</h1>
                                 <p>Discover new music and find out your listening habits!</p>

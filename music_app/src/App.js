@@ -10,7 +10,7 @@ class App extends Component {
 
   authorize = () => {
     const client_id = "8e7b449d0943437fb554085d60ab3608";
-    const redirect_uri = `http:%2F%2F10.123.123.153:3000/discover`;
+    const redirect_uri = `http:%2F%2Flocalhost:3000/discover`;
     window.location.href= `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=user-read-private%20user-read-email%20user-top-read&response_type=token&state=123`;
 }
   render() {

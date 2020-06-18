@@ -66,7 +66,7 @@ class SearchContainer extends Component {
                 console.error(err);
                 this.setState({isError: true});
             });
-        }
+        } 
     }
 
     getTopArtists = async () => {
@@ -128,6 +128,16 @@ class SearchContainer extends Component {
         }
     }
 
+    enableEnter = () => {
+        this._Search_input.addEventListener('keypress', (e) => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                this._Search_Button.click();
+              }
+        });
+        
+    } 
+
     render() {
         const search = <ArtistResults results={this.state.SearchItems}/>;        
 
@@ -142,8 +152,8 @@ class SearchContainer extends Component {
                     <Tab eventKey="search" title="Search Artists">
                         <br />
                         <h3>Search Artists</h3> 
-                        <input type='text' className={classes.Input} ref={(el) => this._Search_input = el} />
-                        <button className={classes.Button} onClick={this.searchArtist}>Search</button>
+                        <input type='text' className={classes.Input} ref={(el) => this._Search_input = el} onFocus={this.enableEnter} />
+                        <button className={classes.Button} onClick={this.searchArtist} ref={(el) => this._Search_Button = el }  >Search</button>
                     </Tab>
                     <Tab eventKey="stats" title="My Stats" >
                         <br />
@@ -156,6 +166,7 @@ class SearchContainer extends Component {
                 </Tabs>
             </Container>
         </Jumbotron>
+        
 
         if(this.state.isError) {
             welcome = <h1 style={{textAlign: 'center'}}>Please connect your Spotify account with DiscoverTunes!</h1> 
